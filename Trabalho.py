@@ -37,19 +37,24 @@ for registro2 in myresult2:
     print(i, "-" , registro2[0])
     i = i + 1
 
-print("Escolha o campo que deseja pesquisar.")
-campo = input()
-print("")
-print("Digite sua pesquisa.")
-pesquisa = input() 
+
+print("Escolha uma coluna que deseja pesquisar.")
+coluna = input()
+print("Digite o que deseja pesquisar")
+pes = input()
 
 
 
-cursor = mydb.cursor()
-cursor.execute('SELECT * FROM {}').format(tabela)
-result = cursor.fetchall()
-for r in result:
-    print(result)
+
+
+mycursor3 = mydb.cursor()
+
+mycursor3.execute(f"SELECT * FROM {tabela} where {coluna} like '%{pes}%'")
+
+myresult3 = mycursor3.fetchall()
+
+for registro3 in myresult3:
+    print(registro3)
 
 
 
