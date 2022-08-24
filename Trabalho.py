@@ -8,7 +8,6 @@ mydb = mysql.connector.connect(
 )
 
 j = True
-
 while j == True:
 
     mycursor = mydb.cursor()
@@ -20,12 +19,13 @@ while j == True:
     myresult = mycursor.fetchall()
 
 
+
     i = 1
     for registro in myresult:   
         print(i ,"-"  , registro[0])
         i = i + 1
 
-
+    
     print("Escolha uma tabela")
     tabela = input()
 
@@ -36,11 +36,11 @@ while j == True:
 
     myresult2 = mycursor2.fetchall()
 
+    
     i = 1
     for registro2 in myresult2:
         print(i, "-" , registro2[0])
         i = i + 1
-
 
     print("Escolha uma coluna que deseja pesquisar.")
     coluna = input()
